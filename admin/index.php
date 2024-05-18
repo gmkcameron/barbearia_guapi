@@ -40,5 +40,35 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
         ?>
     </table>
 </section>
+<section>
+    <h2>Painel de Admin - Registros de Contato</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Mensagem</th>
+            <th>Data de Envio</th>
+        </tr>
+        <?php
+        // Consulta SQL para selecionar os registros de contato da tabela contacts
+        $sql = "SELECT * FROM contacts";
+        $stmt = $pdo->query($sql);
+
+        // Loop através dos resultados e exibir os dados em uma tabela
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "<td>" . $row['message'] . "</td>";
+            echo "<td>" . $row['created_at'] . "</td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+</section>
+
 
 <?php include '../includes/footer.php'; ?>
