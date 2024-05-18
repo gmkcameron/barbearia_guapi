@@ -1,3 +1,15 @@
+<?php
+// Inicie a sessão PHP
+session_start();
+
+// Verifique se o usuário não está autenticado como administrador
+if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
+    // Se o usuário não estiver autenticado, redirecione-o para a página de login
+    header('Location: ../login.php');
+    exit; // Encerre o script para evitar que o restante da página seja carregado
+}
+?>
+
 <?php include '../includes/header.php'; ?>
 <?php include '../includes/db.php'; ?>
 

@@ -18,5 +18,7 @@
         <a href="/barbearia_estacio/contato.php">CONTATO</a> |
         <a href="/barbearia_estacio/schedule.php">AGENDAR</a> |
         <a href="/barbearia_estacio/admin/index.php">ADMIN</a>
+        <a href="/barbearia_estacio/login.php">Login</a>
+        <a href="/barbearia_estacio/logout.php">Logout</a>
     </nav>
     <main>
