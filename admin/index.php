@@ -87,11 +87,12 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
             $currentMonth = date('m');
             $currentYear = date('Y');
 
-            // Consulta SQL para selecionar os clientes com mais agendamentos no mês atual
+            // Consulta SQL para selecionar os clientes com três ou mais agendamentos no mês atual
             $sql_top_clients = "SELECT client_name, COUNT(*) as total_appointments
                                 FROM appointments
                                 WHERE MONTH(appointment_date) = :currentMonth AND YEAR(appointment_date) = :currentYear
                                 GROUP BY client_name
+                                HAVING COUNT(*) >= 3
                                 ORDER BY total_appointments DESC";
             $stmt_top_clients = $pdo->prepare($sql_top_clients);
             $stmt_top_clients->execute(['currentMonth' => $currentMonth, 'currentYear' => $currentYear]);
@@ -99,7 +100,7 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
             // Loop através dos resultados e exibir os dados em uma tabela
             while ($row = $stmt_top_clients->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
-                echo "<td>" . $row['client_name'] . "</td>";
+                echo "<td style='color: green;'>" . $row['client_name'] . "</td>";
                 echo "<td>" . $row['total_appointments'] . "</td>";
                 echo "</tr>";
             }
