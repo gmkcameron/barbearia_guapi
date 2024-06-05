@@ -18,14 +18,14 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
         <h2>Painel de Admin - Agendamentos</h2>
 
         <!-- Formulário de Pesquisa -->
-        <form method="GET" action="">
+        <form method="GET" action="" style="display: flex; align-items: center;">
             <label for="client_name">Nome do Cliente:</label>
             <input type="text" id="client_name" name="client_name">
-            <label for="appointment_date">Data do Agendamento:</label>
+            <label for="appointment_date" style="margin-left: 10px;">Data do Agendamento:</label>
             <input type="date" id="appointment_date" name="appointment_date">
-            <button type="submit" style="width: 80px; font-size: 14px;">Pesquisar</button>
-
+            <button type="submit" style="width: 100px; font-size: 14px; margin-bottom: 20px; margin-left: 10px">Pesquisar</button>
         </form>
+
 
         <table border="1">
             <tr>
