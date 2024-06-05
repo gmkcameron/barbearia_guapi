@@ -43,7 +43,7 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
     </div>
 
     <div style="width: 30%;">
-        <h2>Pessoas com Mais Agendamentos no Mês</h2>
+        <h2>2 pessoas com mais agendamentos no mês - Dar R$10,00 de desconto</h2>
 
         <table border="1" width="100%">
             <tr>
@@ -55,7 +55,7 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
             $currentMonth = date('m');
             $currentYear = date('Y');
 
-            
+
 
             // Consulta SQL para selecionar os clientes com mais agendamentos no mês atual
             $sql_top_clients = "SELECT client_name, COUNT(*) as total_appointments
