@@ -17,6 +17,15 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
     <div style="width: 65%;">
         <h2>Painel de Admin - Agendamentos</h2>
 
+        <!-- Formulário de Pesquisa -->
+        <form method="GET" action="">
+            <label for="client_name">Nome do Cliente:</label>
+            <input type="text" id="client_name" name="client_name">
+            <label for="appointment_date">Data do Agendamento:</label>
+            <input type="date" id="appointment_date" name="appointment_date">
+            <button type="submit">Pesquisar</button>
+        </form>
+
         <table border="1" width="100%">
             <tr>
                 <th>ID</th>
@@ -26,9 +35,32 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
                 <th>Criado em</th>
             </tr>
             <?php
-            $sql = "SELECT * FROM appointments";
-            $stmt = $pdo->query($sql);
+            // Inicializa as variáveis de filtro
+            $clientName = isset($_GET['client_name']) ? $_GET['client_name'] : '';
+            $appointmentDate = isset($_GET['appointment_date']) ? $_GET['appointment_date'] : '';
 
+            // Cria a consulta SQL com os filtros
+            $sql = "SELECT * FROM appointments WHERE 1=1";
+            if (!empty($clientName)) {
+                $sql .= " AND client_name LIKE :clientName";
+            }
+            if (!empty($appointmentDate)) {
+                $sql .= " AND DATE(appointment_date) = :appointmentDate";
+            }
+
+            $stmt = $pdo->prepare($sql);
+
+            // Bind dos parâmetros
+            if (!empty($clientName)) {
+                $stmt->bindValue(':clientName', '%' . $clientName . '%');
+            }
+            if (!empty($appointmentDate)) {
+                $stmt->bindValue(':appointmentDate', $appointmentDate);
+            }
+
+            $stmt->execute();
+
+            // Exibe os resultados
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
@@ -43,7 +75,7 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
     </div>
 
     <div style="width: 30%;">
-        <h2>2 pessoas com mais agendamentos no mês - Dar R$10,00 de desconto</h2>
+        <h2>Dar 10% desconto para clientes com mais de 3 agendamentos no mês</h2>
 
         <table border="1" width="100%">
             <tr>
@@ -54,8 +86,6 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
             // Obter o mês atual
             $currentMonth = date('m');
             $currentYear = date('Y');
-
-
 
             // Consulta SQL para selecionar os clientes com mais agendamentos no mês atual
             $sql_top_clients = "SELECT client_name, COUNT(*) as total_appointments
