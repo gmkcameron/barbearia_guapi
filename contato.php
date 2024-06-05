@@ -24,6 +24,85 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php include 'includes/header.php'; ?>
 
+<style>
+    section {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #333;
+        text-align: center;
+    }
+
+    section form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section form label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    section form .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    section form .form-group label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    section form .form-group input,
+    section form .form-group textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    section form .form-group textarea {
+        height: 100px;
+        resize: vertical;
+    }
+
+    section form button {
+        padding: 10px;
+        font-size: 1.2em;
+        color: #fff;
+        background-color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    section form button:hover {
+        background-color: #555;
+    }
+
+    section p {
+        text-align: center;
+        font-size: 1.2em;
+        color: green;
+    }
+
+    section .error_message {
+        color: red;
+    }
+</style>
+
 <section>
     <h2>Contato</h2>
 
@@ -32,19 +111,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php } ?>
 
     <?php if (isset($error_message)) { ?>
-        <p><?php echo $error_message; ?></p>
+        <p class="error_message"><?php echo $error_message; ?></p>
     <?php } ?>
 
     <form method="POST" action="contato.php">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" required></textarea>
-        <br>
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
         <button type="submit">Enviar</button>
     </form>
 </section>
