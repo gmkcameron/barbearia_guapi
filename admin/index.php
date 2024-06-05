@@ -15,7 +15,7 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
 
 <section style="display: flex; justify-content: space-between;">
     <div style="width: 100%;">
-        <h2>Painel de Admin - Agendamentos</h2>
+        <h3>PAINEL DE ADMIN - AGENDAMENTOS</h3>
 
         <!-- Formulário de Pesquisa -->
         <form method="GET" action="" style="display: flex; align-items: center;">
@@ -77,7 +77,7 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
 </section>
 
 <section>
-    <h2>Painel de Admin - Registros de Contato</h2>
+    <h3><br>PAINEL DE ADMIN - REGISTROS DE CONTATO</h3>
 
     <table border="1">
         <tr>
@@ -106,8 +106,8 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
     </table>
 </section>
 
-<div style="width: 30%;">
-    <h2>Dar 10% desconto para clientes com mais de 3 agendamentos no mês</h2>
+<div style="width: 100%;">
+    <h3><br>DAR 10% DESCONTO PARA CLIENTES COM MAIS DE 3 AGENDAMENTOS NO MÊS</h3>
 
     <table border="1" width="100%">
         <tr>
