@@ -1,16 +1,12 @@
 <?php include 'includes/header.php'; ?>
 
 <section>
-    <h2>Serviços</h2>
-    <h3>Cortes realizados:</h3>
-    <p>Corte de cabelo clássico</p>
-    <p>Corte de cabelo estilizado</p>
-    <p>Cortes de cabelo modernos e tendências</p>
+    <h2>Oferecemos uma ampla gama de serviços para atender às suas necessidades:</h2>
 
-    <h3>Barba</h3>
-    <p>Aparação e modelagem da barba</p>
-    <p>Definição das linhas</p>
-    <p>Hidratação dos fios</p>
+    <p>Cortes Clássicos e Modernos: Do clássico ao contemporâneo, nossos barbeiros são experts em uma variedade de estilos que atendem a todas as preferências</p>
+    <p>Aparar e Modelar Barbas: Transforme sua barba com nossos serviços de aparar e modelar, utilizando técnicas que realçam seu estilo pessoal</p>
+    <p>Tratamentos Capilares: Cuide da saúde do seu cabelo com nossos tratamentos exclusivos, projetados para revitalizar e fortalecer</p>
+    <p>Relaxamento e Cuidados Pessoais: Desfrute de um momento de relaxamento com nossas<br> massagens faciais e tratamentos de pele.</p>
 </section>
 
 <?php include 'includes/footer.php'; ?>
