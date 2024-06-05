@@ -14,10 +14,11 @@
         line-height: 1.6;
         background-color: #f4f4f4;
         color: #333;
-        padding: 20px;
+        padding: 0;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        margin: 0; /* Adicionado */
     }
 
     /* Cabeçalho */
@@ -26,6 +27,7 @@
         color: #fff;
         padding: 20px 0;
         text-align: center;
+        width: 100%; /* Adicionado */
     }
 
     header h1 {
@@ -40,6 +42,7 @@
         text-align: center;
         padding: 10px 0;
         margin-top: auto;
+        width: 100%; /* Adicionado */
     }
 
     /* Seção principal */
@@ -50,6 +53,7 @@
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex-grow: 1; /* Adicionado */
     }
 
     section h2 {
