@@ -55,6 +55,8 @@ if (!isset($_SESSION['adminLoggedIn']) || $_SESSION['adminLoggedIn'] !== true) {
             $currentMonth = date('m');
             $currentYear = date('Y');
 
+            
+
             // Consulta SQL para selecionar os clientes com mais agendamentos no mês atual
             $sql_top_clients = "SELECT client_name, COUNT(*) as total_appointments
                                 FROM appointments
