@@ -25,3 +25,7 @@ O Projeto "Barbearia do Leone" é uma aplicação web destinada a facilitar o ge
 ## 🔮 Ajustes Futuros
 
 Serão implementados alguns ajustes de modo a otimizar a usabilidade tanto para o barbeiro quanto para o cliente.
+
+## 👤 Grupo
+
+Guilherme M. K. Cameron, Ygor J. G. S. Batista, Fabricio, Pablo, Eduardo
