@@ -1,12 +1,20 @@
-# Barbearia do Leone
+## 🖥️ Projeto Barbearia do Leone
 
-Bem-vindo ao repositório do Projeto Barbearia do Leone! Este é um sistema desenvolvido em PHP e CSS para gerenciamento de uma barbearia, para a disciplina de "Tópicos de Big Data em Python"
+Bem-vindo ao repositório do Projeto! O sistema foi desenvolvido em PHP para gerenciamento de uma barbearia durante a disciplina de "Tópicos de Big Data em Python", Prof. Marlan, Estácio Teresópolis-RJ (2024).
 
-## Descrição
+## 📖 Descrição
 
-O Projeto "Barbearia do Leone" é uma aplicação web destinada a facilitar o gerenciamento das atividades de uma barbearia. Com ele, é possível gerenciar clientes, agendamentos e serviços oferecidos pela barbearia.
+O Projeto "Barbearia do Leone" é uma aplicação web destinada a facilitar o gerenciamento das atividades de uma barbearia. Com ele, é possível gerenciar clientes, agendamentos e serviços oferecidos pela barbearia, além da utilização de Big Data
 
-## Funcionalidades
+## 🚀 Tecnologias
+
+- PHP
+- CSS
+- HTML
+- Xampp
+- Git e Github
+
+## 🗓️ Funcionalidades
 
 - Cadastro de clientes
 - Agendamento de horários e datas
